@@ -1,16 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import { AgGridModule } from 'ag-grid-angular';
+import {AppComponent} from './app.component';
+import {FakeApiService} from './services/fake-api.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AgGridModule.withComponents([]),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [FakeApiService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
